@@ -27,6 +27,10 @@ shadowsocks config:
 
     }
     
+install zerotier:
+
+    curl -s https://install.zerotier.com/ | sudo bash
+    
 check zerotier network
     
     pi@raspberrypi:~ $ sudo zerotier-cli listnetworks
