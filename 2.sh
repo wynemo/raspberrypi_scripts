@@ -8,4 +8,5 @@ iptables-save | perl -ne '$H{$_}++ or print' | iptables-restore
 cd /root/shadowsocks
 nohup python server.py -c config.json &
 cd /tmp/
+# go get github.com/wynemo/kiss-proxy/httpproxy
 nohup /root/httpproxy &
