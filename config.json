@@ -1,0 +1,6 @@
+{
+    "local_ip": "0.0.0.0",
+    "local_port": 53,
+    "remote_ip": "remote_ip",
+    "remote_port": 123245
+}
