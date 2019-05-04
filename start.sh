@@ -3,6 +3,9 @@
 #iptables -A FORWARD -s 10.147.17.0/24 -j ACCEPT
 #iptables -t nat -A POSTROUTING -s 10.147.17.0/24 -o wlan0 -j MASQUERADE
 
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+sysctl -p
+
 cd /home/pi/redsocks/
 nohup python dns-client.py config.json.local &
 cd /home/pi/shadowsocks/shadowsocks
