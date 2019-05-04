@@ -1,0 +1,3 @@
+# as root
+*/30 * * * * sh /home/pi/1.sh >/home/pi/1.log 2>&1
+@reboot sh /home/pi/start.sh
