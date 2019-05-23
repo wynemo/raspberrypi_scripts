@@ -5,6 +5,7 @@
 
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 sysctl -p
+sysctl net.ipv4.ip_forward
 
 cd /home/pi/redsocks/
 nohup python dns-client.py config.json.local &
