@@ -34,7 +34,9 @@ sudo iptables -t nat -A OUTPUT -d 104.238.131.160 -j RETURN # bypass proxy ip
 sudo iptables -t nat -A OUTPUT -d 42.200.198.191 -j RETURN # bypass proxy ip
 
 sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
-sudo iptables -t nat -A REDSOCKS -s 192.168.196.0/24 -p udp --dport 53 -j REDIRECT --to-ports 53 # forward dns request from zerotier to local dns server
+# forward dns request from zerotier to local dns server
+sudo iptables -t nat -A REDSOCKS -s 192.168.193.0/24 -p udp --dport 53 -j REDIRECT --to-ports 53
+sudo iptables -t nat -A REDSOCKS -s 10.147.17.0/24 -p udp --dport 53 -j REDIRECT --to-ports 53
 
 sudo iptables -t nat -A OUTPUT -p tcp  -j REDSOCKS
 sudo iptables -t nat -A OUTPUT -p udp --dport 53 -j REDSOCKS # dns
